@@ -12,14 +12,20 @@ for x, y in guests.items():
 print(' ')
 # Another example
 
-student = {'name': 'John', 'Age': 25, 'courses': ['Math', 'CompSci'], 'phone': '555-5555'}
+data = {'order_4829': {'type': 't-shirt', 'size': 'large', 'price': 9.99, 'order_status': 'processing'},
+        'order_6184': {'type': 'pants', 'size': 'medium', 'price': 14.99, 'order_status': 'complete'},
+        'order_2905': {'type': 'shoes', 'size': 12, 'price': 22.50, 'order_status': 'complete'},
+        'order_7378': {'type': 'jacket', 'size': 'large', 'price': 24.99, 'order_status': 'processing'}}
 
-for x in student:
-    print(x)
 
-for x in student:
-    print(student[x])
+class OrderProcessingDict(UserDict):
 
-for x, y in student.items():
-    print(x, y)
+    def clean_orders(self):
+        items_to_remove = []
 
+        for key, value in self.data.items():
+            if value['order_status'] == 'complete':
+                items_to_remove.append(key)
+
+        for item in items_to_remove:
+            del self.data[item]
