@@ -1,0 +1,35 @@
+Common pipenv commands:
+
+pipenv install
+    If a virtual environment does not exist, creates a new virtual environment in the current directory.
+	If a virtual environment does exists, installs all packages in the pipfile.
+pipenv install <package>
+    If a virtual environment does not exist, creates a new virtual environment in the current directory and installs the package.
+	If a virtual environment does exists, installs the package
+pipenv install -r
+    If a virtual environment does not exist, creates a new virtual environment in the current directory and installs the packages listed in Requirements.txt.
+	If a virtual environment does exists, installs the packages listed in Requirements.txt
+pipenv install --ignore-pipfile
+    Installs a virtual environment from Pipfile.lock
+pipenv shell
+    Activates the virtual environment
+pipenv exit
+    Deactivates the virtual environment
+pipenv requirements
+    Generates Requirements.txt contents
+pipenv --venv
+    Shows the location of the virtual environment
+pipenv --rm
+    Removes the virtual environment
+
+
+Start a new local project from a remote repo clone:
+
+	1. Copy the URL from the remote repo.
+	2. Open Git Bash and navigate to the parent directory of the new project. For example:
+	   Users/<user name>/PycharmProjects/
+	3. Enter git clone url of remote repo
+	4. Open PyCharm and select New Project.
+	5. Select the directory created by the cloning process.
+	6. Select pipenv for the new environment.
+	7. Choose "Create from Existing Source"
