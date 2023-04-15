@@ -1,51 +1,19 @@
-# Chat GPT explanations
-# super().__init__()
-class Parent:
-    def __init__(self, name):
-        self.name = name
-        print("Parent class constructor called.")
+import tkinter as tk
+from tkinter import ttk
 
 
-class Child(Parent):
-    def __init__(self, name, age):
-        super().__init__(name)
-        self.age = age
-        print("Child class constructor called.")
+def popup_message(title_text, message_text, confirmation_button_text):
+    normal_font = ('Helvetica', 16)
+    popup = tk.Tk()
+    popup.attributes("-topmost", True)
+    popup.wm_title(title_text)
+    label = ttk.Label(popup, text=message_text, font=normal_font)
+    label.pack(side="top", fill="both", padx=60, pady=60)
+    B1 = ttk.Button(popup, text=confirmation_button_text, command=popup.destroy, padding=10)
+    B1.pack(side="bottom", pady=20)
+    popup.mainloop()
 
 
-child = Child("John", 10)
-print(child.name)
-print(child.age)
-print('')
-
-
-# Decorators
-def log_function(func):
-    def wrapper(*args, **kwargs):
-        print("Calling function:", func.__name__)
-        result = func(*args, **kwargs)
-        print("Function", func.__name__, "returned", result)
-        return result
-
-    return wrapper
-
-
-@log_function
-def add_numbers(a, b):
-    return a + b
-
-
-result = add_numbers(3, 4)
-print("Result:", result)
-
-
-def solution(string):
-    rev_string = ''
-    n = -1
-    for letter in string:
-        rev_string = rev_string + string[n]
-        n -= 1
-    return rev_string
-
-
-print(solution('World'))
+popup_message('Manual step',
+              'Connect BNC adapter cable to Triton head',
+              'Cable connected')
