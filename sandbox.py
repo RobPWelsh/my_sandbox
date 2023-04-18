@@ -1,19 +1,44 @@
-import tkinter as tk
-from tkinter import ttk
+from dataclasses import dataclass
+from dataclasses import asdict
+import os
+import pathlib
+
+@dataclass
+class Card:
+    summary: str = None
+    owner: str = None
+    state: str = 'todo'
+    id: int = None
+
+    @classmethod
+    def from_dict(cls, d):
+        return Card(**d)
+
+    def to_dict(self):
+        return asdict(self)
 
 
-def popup_message(title_text, message_text, confirmation_button_text):
-    normal_font = ('Helvetica', 16)
-    popup = tk.Tk()
-    popup.attributes("-topmost", True)
-    popup.wm_title(title_text)
-    label = ttk.Label(popup, text=message_text, font=normal_font)
-    label.pack(side="top", fill="both", padx=60, pady=60)
-    B1 = ttk.Button(popup, text=confirmation_button_text, command=popup.destroy, padding=10)
-    B1.pack(side="bottom", pady=20)
-    popup.mainloop()
+my_dict = {'summary': 'do something', 'owner': 'Rob', 'state': 'todo', 'id': 1}
+
+card1 = Card.from_dict(my_dict)
+
+print(card1)
+
+print(card1.to_dict())
+
+# ______________________________________
+my_dict = {}
 
 
-popup_message('Manual step',
-              'Connect BNC adapter cable to Triton head',
-              'Cable connected')
+def create_dict(string):
+    global my_dict
+    for index, item in enumerate(string):
+        my_dict[index] = item
+    return my_dict
+
+
+print(create_dict('RobPaulWelsh'))
+print(my_dict[7])
+
+
+
