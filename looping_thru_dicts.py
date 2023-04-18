@@ -1,15 +1,18 @@
-guests = {'Tim': 22, 'Tonya': 45, 'Mary': 12, 'Ann': 32, 'Beth': 20, 'Sam': 5, 'Manny': 76, 'Kenton': 15, 'Kenny': 27, 'Dixie': 46, 'Jane': 35, 'Mallory': 32, 'Julian': 4, 'Edward': 71, 'Rose': 65}
+from collections import UserDict
 
-for x in guests:
-    print(x)  # Prints each name (key) on a separate line
-
-for x in guests:
-    print(guests[x])  # Prints each age (value) on a separate line
-
-for x, y in guests.items():
-    print(x, y)  # prints each name and age (key and value) on a separate line
-
-print(' ')
+# guests = {'Tim': 22, 'Tonya': 45, 'Mary': 12, 'Ann': 32, 'Beth': 20, 'Sam': 5, 'Manny': 76, 'Kenton': 15, 'Kenny': 27,
+#           'Dixie': 46, 'Jane': 35, 'Mallory': 32, 'Julian': 4, 'Edward': 71, 'Rose': 65}
+#
+# for x in guests:
+#     print(x)  # Prints each name (key) on a separate line
+#
+# for x in guests:
+#     print(guests[x])  # Prints each age (value) on a separate line
+#
+# for x, y in guests.items():
+#     print(x, y)  # prints each name and age (key and value) on a separate line
+#
+# print(' ')
 # Another example
 
 data = {'order_4829': {'type': 't-shirt', 'size': 'large', 'price': 9.99, 'order_status': 'processing'},
@@ -29,3 +32,10 @@ class OrderProcessingDict(UserDict):
 
         for item in items_to_remove:
             del self.data[item]
+
+
+process_dict = OrderProcessingDict(data)
+
+process_dict.clean_orders()
+
+print(data)
