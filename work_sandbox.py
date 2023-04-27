@@ -1,7 +1,7 @@
 # This is the sandbox I'll use at work. First added to GitHub in the work_edits branch.
 from enum import Enum, IntEnum
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 class SourceType(Enum):
@@ -93,11 +93,14 @@ print(elements)  # MDC,1,MSET,1
 # Linear regression: y = mx + b
 
 x_values = [1, 2, 3, 4, 5, 6, 7]
-y_values = [1.5, 3.8, 6.7, 9.0, 11.2, 13.6, 16]
+y_values = [1.5, 5, 6.7, 9.8, 11.2, 12.1, 16]
 
 fit_eq = np.polyfit(x_values, y_values, 1)  # returns m and x
 
-print(fit_eq)  # [ 2.41428571 -0.82857143]
+print(fit_eq)  # [2.22142857 0.01428571]
 
 fitted_y = [x * fit_eq[0] + fit_eq[1] for x in x_values]
-print(fitted_y)
+
+plt.scatter(x_values, y_values, color='DarkOrange')
+plt.plot(x_values, fitted_y, color='Blue')
+plt.show()
