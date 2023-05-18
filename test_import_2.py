@@ -58,16 +58,31 @@
     from support_files_2 import support_file_1
     from support_files_2 import support_file_2
 """
-from support_files_2 import support_file_1
-from support_files_2 import support_file_2
-
-x = support_file_1.ClassOne()  # This is printed from ClassOne
-y = support_file_2.ClassTwo()  # This is printed from ClassTwo
-
-a = support_file_1.function_one()
-print(a)  # Prints This is returned from function_one
-
-b = support_file_2.function_two()
-print(b)  # Prints This is returned from function_two
+# from support_files_2 import support_file_1
+# from support_files_2 import support_file_2
+#
+# x = support_file_1.ClassOne()  # This is printed from ClassOne
+# y = support_file_2.ClassTwo()  # This is printed from ClassTwo
+#
+# a = support_file_1.function_one()
+# print(a)  # Prints This is returned from function_one
+#
+# b = support_file_2.function_two()
+# print(b)  # Prints This is returned from function_two
 
 # __________________________________________________________________________________________________
+# 5 The __init__.py structured as follows:
+"""
+    from .support_file_1 import *
+    from .support_file_2 import *
+"""
+import support_files_2  # imports directory
+
+x = support_files_2.ClassOne()  # This is printed from ClassOne
+y = support_files_2.ClassTwo()  # This is printed from ClassTwo
+
+a = support_files_2.function_one()
+print(a)  # Prints This is returned from function_one
+
+b = support_files_2.function_two()
+print(b)  # Prints This is returned from function_two
