@@ -80,5 +80,5 @@ print(my_business.franchise[0].name)  # Rob's Franchise
 print(my_business.franchise[1].name)  # Bill's Franchise
 print(my_business.franchise[2].name)  # Joe's Franchise
 
-
+# adding this line as part of git practice to push changes
 
