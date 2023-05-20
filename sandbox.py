@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from dataclasses import asdict
 import os
 import pathlib
+from tempfile import TemporaryDirectory
 
 
 @dataclass
@@ -49,8 +50,10 @@ def create_dict(string):
     return another_dict
 
 
-print(create_dict('RobPaulWelsh'))  # {0: 'R', 1: 'o', 2: 'b', 3: 'P', 4: 'a', 5: 'u', 6: 'l', 7: 'W', 8: 'e', 9: 'l', 10: 's', 11: 'h'}
+print(create_dict(
+    'RobPaulWelsh'))  # {0: 'R', 1: 'o', 2: 'b', 3: 'P', 4: 'a', 5: 'u', 6: 'l', 7: 'W', 8: 'e', 9: 'l', 10: 's', 11: 'h'}
 print(another_dict[7])  # W
+
 
 # _________________________________________________________
 # Use the constructor of a class to make objects for another class
@@ -76,5 +79,6 @@ my_business = Business(1)
 print(my_business.franchise[0].name)  # Rob's Franchise
 print(my_business.franchise[1].name)  # Bill's Franchise
 print(my_business.franchise[2].name)  # Joe's Franchise
+
 
 
