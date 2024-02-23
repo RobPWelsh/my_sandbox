@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from ctypes import *
 
-
+"""
 class SourceType(Enum):
     VOLTAGE = 0,
     CURRENT = 1
@@ -106,4 +106,15 @@ print(elements)  # MDC,1,MSET,1
 # plt.scatter(x_values, y_values, color='DarkOrange')
 # plt.plot(x_values, fitted_y, color='Blue')
 # plt.show()
+
+"""
+colors = ['Red', 'White', 'Blue', 'Green']
+for color in colors:
+    print(color)
+    something = input("Enter something: ")
+    print(something)
+
+
+
+
 
